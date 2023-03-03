@@ -4,6 +4,7 @@ import "./App.css";
 import { ProgramsList } from "./components/ProgramsList";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { CategoriesController } from "./components/CategoriesController";
 
 const darkTheme = createTheme({
   palette: {
@@ -16,6 +17,7 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <ProgramsList />
+      <CategoriesController />
     </ThemeProvider>
   );
 }
