@@ -7,6 +7,7 @@ export interface ProgramData {
   name: string;
   description: string;
   programimage: string;
+  programurl: string;
 }
 
 export function ProgramsList() {
@@ -21,7 +22,9 @@ export function ProgramsList() {
         name: item.name,
         description: item.description,
         programimage: item.programimage,
+        programurl: item.programurl,
       };
+
       return progaramdata;
     });
     setRadioList(programsInfo);
