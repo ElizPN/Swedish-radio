@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid } from "@mui/material";
 import Box from "@mui/system/Box";
+import { nanoid } from "nanoid";
 
 interface RadioItemProps {
   radioList: ProgramData[];
@@ -19,8 +20,8 @@ export function RadioItem({ radioList }: RadioItemProps) {
       </Typography>
       <Grid container spacing={2} padding={5}>
         {radioList.length > 0 &&
-          radioList.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+          radioList.map((item) => (
+            <Grid key={nanoid()} item xs={12} sm={6} md={4} lg={3}>
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                   <CardMedia
