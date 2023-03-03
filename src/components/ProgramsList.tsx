@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { Box, Button, Container, Typography } from "@mui/material";
+import { useState } from "react";
 import { RadioItem } from "./RadioItem";
 
-// const apiDomain = "https://api.sr.se/api/v2/programs/?format=json&index?programcategoryid=133"
-// const apiDomain = "https://api.sr.se/api/v2/programs/index?programcategoryid=133"
 
 export interface ProgramData {
   name: string;
@@ -12,7 +11,7 @@ export interface ProgramData {
 
 const fetchRadioData = async () => {
   const dataUrl =
-    "https://api.sr.se/api/v2/programs/?format=json&index?channelid=164&programcategoryid=133";
+    "https://api.sr.se/api/v2/programs/index?programcategoryid=133&format=JSON&pagination=false";
   return fetch(dataUrl).then((response) => {
     return response.json();
   });
@@ -37,22 +36,9 @@ export function ProgramsList() {
   };
 
   return (
-    <div>
-      {/* {radioList.length > 0 && (
-        <ul>
-          <li>{radioList[0].name}</li>
-          <li>
-            <img src={radioList[0].programimage} />
-          </li>
-          <li>{radioList[0].description}</li>
-        </ul>
-      )} */}
-      <button onClick={handleOnclick}>start</button>
-
-      {radioList.length > 0 &&
-        radioList.map((item, index) => {
-          return <RadioItem item={item}></RadioItem>;
-        })}
-    </div>
+    <Box>
+      <Button onClick={handleOnclick}>start</Button>
+      <RadioItem radioList={radioList} />
+    </Box>
   );
 }
