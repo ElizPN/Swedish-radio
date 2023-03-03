@@ -1,21 +1,13 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useState } from "react";
+import { fetchRadioData } from "../services/radioService";
 import { RadioItem } from "./RadioItem";
-
 
 export interface ProgramData {
   name: string;
   description: string;
   programimage: string;
 }
-
-const fetchRadioData = async () => {
-  const dataUrl =
-    "https://api.sr.se/api/v2/programs/index?programcategoryid=133&format=JSON&pagination=false";
-  return fetch(dataUrl).then((response) => {
-    return response.json();
-  });
-};
 
 export function ProgramsList() {
   const [radioList, setRadioList] = useState<ProgramData[]>([]);
