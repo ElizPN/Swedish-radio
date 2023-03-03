@@ -1,15 +1,47 @@
 import { ProgramData } from "./ProgramsList";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea, Grid } from "@mui/material";
+import Box from "@mui/system/Box";
 
 interface RadioItemProps {
-  item: ProgramData;
+  radioList: ProgramData[];
 }
 
-export function RadioItem({ item }: RadioItemProps) {
+export function RadioItem({ radioList }: RadioItemProps) {
   return (
-    <div>
-      <p>{item.name}</p>
-      <p>{item.description}</p>
-      <img src={item.programimage} />
-    </div>
+    <Box>
+      <Typography textAlign='center' variant='h3'>
+        Humor från Sveriges radio
+      </Typography>
+      <Grid container spacing={2} padding={5}>
+        {radioList.length > 0 &&
+          radioList.map((item, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component='img'
+                    height='300'
+                    image={item.programimage}
+                    alt='green iguana'
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant='h5' component='div'>
+                      {item.name}
+                    </Typography>
+                    <Typography variant='body2' color='text.secondary'>
+                      {item.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+      </Grid>
+    </Box>
   );
 }
