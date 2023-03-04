@@ -9,12 +9,15 @@ export interface ProgramData {
   programimage: string;
   programurl: string;
 }
+interface ProgramsListProps {
+  selectedOption: string;
+}
 
-export function ProgramsList() {
+export function ProgramsList({ selectedOption }: ProgramsListProps) {
   const [radioList, setRadioList] = useState<ProgramData[]>([]);
 
   const handleOnclick = async () => {
-    const radioData = await fetchRadioData(133);
+    const radioData = await fetchRadioData(selectedOption);
     const programs = radioData.programs;
 
     const programsInfo = programs.map((item: ProgramData) => {
