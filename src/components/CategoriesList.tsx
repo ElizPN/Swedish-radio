@@ -10,7 +10,6 @@ interface CategoriesListProps {
 export function CategoriesList({ categoryList }: CategoriesListProps) {
   const [selectedOption, setSelectedOption] = useState("");
 
-
   return (
     <FormControl>
       <InputLabel id='demo-simple-select-label'>Category</InputLabel>
@@ -26,6 +25,7 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
             return (
               <MenuItem key={nanoid()} value={item.name}>
                 {item.name}
+                {item.id}
               </MenuItem>
             );
           })}
