@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 import { CategoriesList } from "./CategoriesList";
 
-// export const fetchRadioCategories = async () => {
-//   const dataUrl =
-//     "https://api.sr.se/api/v2/programcategories/?format=JSON&pagination=false";
-//   return fetch(dataUrl).then((response) => {
-//     return response.json();
-//   });
-// };
 
 export const fetchRadioCategories = async () => {
   const dataUrl =
@@ -34,7 +27,6 @@ export function CategoriesController() {
         return categoryItem;
       });
       setCategoryList(categoriesInfo);
-      console.log(categoriesInfo);
     }
     fetchData();
   }, []);
