@@ -14,7 +14,7 @@ export function ProgramsList() {
   const [radioList, setRadioList] = useState<ProgramData[]>([]);
 
   const handleOnclick = async () => {
-    const radioData = await fetchRadioData();
+    const radioData = await fetchRadioData(133);
     const programs = radioData.programs;
 
     const programsInfo = programs.map((item: ProgramData) => {
