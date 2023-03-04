@@ -16,7 +16,6 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <ProgramsList />
       <CategoriesController />
     </ThemeProvider>
   );
