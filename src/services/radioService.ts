@@ -1,7 +1,8 @@
-export const fetchRadioData = async () => {
-  const dataUrl =
-    "https://api.sr.se/api/v2/programs/index?programcategoryid=133&format=JSON&pagination=false";
+export const fetchRadioData = async (id: number) => {
+  const dataUrl = `https://api.sr.se/api/v2/programs/index?programcategoryid=${id}&format=JSON&pagination=false`;
   return fetch(dataUrl).then((response) => {
     return response.json();
   });
 };
+
+
