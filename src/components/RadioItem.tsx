@@ -1,4 +1,3 @@
-import { ProgramData } from "./ProgramsList";
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -7,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid, Link } from "@mui/material";
 import Box from "@mui/system/Box";
 import { nanoid } from "nanoid";
+import { ProgramData } from "./CategoriesList";
 
 interface RadioItemProps {
   radioList: ProgramData[];
