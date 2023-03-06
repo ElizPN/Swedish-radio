@@ -91,7 +91,7 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
           </FormControl>
         </Grid>
       </Grid>
-      <ProgramsList selectedOption={selectedOption} radioList={radioList} />
+      <ProgramsList radioList={radioList} />
     </Box>
   );
 }
