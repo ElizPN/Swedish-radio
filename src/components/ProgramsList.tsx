@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid, Link, styled } from "@mui/material";
-import { nanoid } from "nanoid";
+import { genereteId } from "../services/generateId";
 
 interface ProgramsListProps {
   radioList: ProgramData[];
@@ -17,7 +17,7 @@ export function ProgramsList({ radioList }: ProgramsListProps) {
       <Grid container spacing={2} padding={5}>
         {radioList.length > 0 &&
           radioList.map((item) => (
-            <Grid key={nanoid()} item xs={12} sm={6} md={4} lg={3}>
+            <Grid key={genereteId()} item xs={12} sm={6} md={4} lg={3}>
               <Card sx={{ maxWidth: 345 }}>
                 <Link href={item.programurl} target='_blank'>
                   <CardActionArea>

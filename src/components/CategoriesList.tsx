@@ -8,11 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import Box from "@mui/system/Box";
-import { nanoid } from "nanoid";
 import { useState } from "react";
 import { CategoryItem } from "./CategoriesController";
 import { ProgramsList } from "./ProgramsList";
 import { fetchRadioData } from "../services/fetchRadioPrograms";
+import { genereteId } from "../services/generateId";
 
 interface CategoriesListProps {
   categoryList: CategoryItem[];
@@ -82,7 +82,7 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
               {categoryList.length > 0 &&
                 categoryList.map((item) => {
                   return (
-                    <MenuItem key={nanoid()} value={item.id}>
+                    <MenuItem key={genereteId()} value={item.id}>
                       {item.name}
                     </MenuItem>
                   );
