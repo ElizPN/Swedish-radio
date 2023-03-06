@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import Box from "@mui/system/Box";
 import { nanoid } from "nanoid";
 import { useState } from "react";
@@ -22,7 +22,7 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
 
   // React.ChangeEvent<HTMLSelectElement>
 
-  const handleOnchange = async (event: any) => {
+  const handleOnchange = async (event: SelectChangeEvent<string>) => {
     const radioData = await fetchRadioData(event.target.value);
     const programs = radioData.programs;
 
