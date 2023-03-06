@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Grid, Link } from "@mui/material";
+import { CardActionArea, Grid, Link, styled } from "@mui/material";
 import Box from "@mui/system/Box";
 import { nanoid } from "nanoid";
 import { ProgramData } from "./CategoriesList";
@@ -12,12 +12,10 @@ interface RadioItemProps {
   radioList: ProgramData[];
 }
 
+
 export function RadioItem({ radioList }: RadioItemProps) {
   return (
     <Box>
-      <Typography textAlign='center' variant='h3'>
-        Humor från Sveriges radio
-      </Typography>
       <Grid container spacing={2} padding={5}>
         {radioList.length > 0 &&
           radioList.map((item) => (
