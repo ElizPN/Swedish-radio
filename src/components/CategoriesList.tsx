@@ -20,7 +20,6 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
   const [radioList, setRadioList] = useState<ProgramData[]>([]);
   const [selectedOption, setSelectedOption] = useState("");
 
-  // React.ChangeEvent<HTMLSelectElement>
 
   const handleOnchange = async (event: SelectChangeEvent<string>) => {
     const radioData = await fetchRadioData(event.target.value);
