@@ -12,7 +12,7 @@ import { nanoid } from "nanoid";
 import { useState } from "react";
 import { CategoryItem } from "./CategoriesController";
 import { ProgramsList } from "./ProgramsList";
-import { fetchRadioData } from "../services/radioService";
+import { fetchRadioData } from "../services/fetchRadioPrograms";
 
 interface CategoriesListProps {
   categoryList: CategoryItem[];
@@ -70,14 +70,14 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
               sx={{ backgroundColor: "black", pr: "5px" }}
               id='demo-simple-select-label'
             >
-              Category
+              Kategori
             </InputLabel>
             <Select
               value={selectedOption}
               onChange={handleOnchange}
               labelId='demo-simple-select-label'
               id='demo-simple-select'
-              label='Age'
+              label='Kategori'
             >
               {categoryList.length > 0 &&
                 categoryList.map((item) => {

@@ -7,19 +7,11 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid, Link, styled } from "@mui/material";
 import { nanoid } from "nanoid";
 
-
-
 interface ProgramsListProps {
-
   radioList: ProgramData[];
 }
 
-export function ProgramsList({
- 
-  radioList,
-}: ProgramsListProps) {
-  
-
+export function ProgramsList({ radioList }: ProgramsListProps) {
   return (
     <Box>
       <Grid container spacing={2} padding={5}>
