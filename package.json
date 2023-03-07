@@ -1,5 +1,6 @@
 {
   "name": "swedish-radio",
+  "homepage": "https://elizpn.github.io/Swedish-radio/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
