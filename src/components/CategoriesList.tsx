@@ -56,7 +56,7 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
   return (
     <Box>
       <Typography textAlign='center' variant='h3'>
-        Svensk Radioprogram
+        Sveriges Radio program
       </Typography>
       <Grid container direction='column' sx={styleGridContainer} spacing={3}>
         <Grid item xs={6}>
