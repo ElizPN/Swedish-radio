@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Swedish-radio/static/css/main.073c9b0a.css",
-    "main.js": "/Swedish-radio/static/js/main.cbebdc0d.js",
+    "main.js": "/Swedish-radio/static/js/main.f9b8f0d1.js",
     "static/js/787.ceff904c.chunk.js": "/Swedish-radio/static/js/787.ceff904c.chunk.js",
     "index.html": "/Swedish-radio/index.html",
     "main.073c9b0a.css.map": "/Swedish-radio/static/css/main.073c9b0a.css.map",
-    "main.cbebdc0d.js.map": "/Swedish-radio/static/js/main.cbebdc0d.js.map",
+    "main.f9b8f0d1.js.map": "/Swedish-radio/static/js/main.f9b8f0d1.js.map",
     "787.ceff904c.chunk.js.map": "/Swedish-radio/static/js/787.ceff904c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.cbebdc0d.js"
+    "static/js/main.f9b8f0d1.js"
   ]
 }
