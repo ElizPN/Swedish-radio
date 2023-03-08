@@ -47,13 +47,8 @@
     ]
   },
   "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testEnvironment": "jsdom",
-    "testMatch": [
-      "**/__tests__/**/*.test.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[jt]s?(x)"
+    "transformIgnorePatterns": [
+      "node_modules/(?!(nanoid)/)"
     ]
   }
 }
