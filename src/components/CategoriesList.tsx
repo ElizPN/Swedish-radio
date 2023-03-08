@@ -1,9 +1,5 @@
 import {
-  FormControl,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
   SelectChangeEvent,
   Typography,
 } from "@mui/material";
@@ -13,6 +9,7 @@ import { CategoryItem } from "./CategoriesController";
 import { ProgramsList } from "./ProgramsList";
 import { fetchRadioData } from "../services/fetchRadioPrograms";
 import { genereteId } from "../services/generateId";
+import { CategoriesSelect } from "./CategoriesSelect";
 
 interface CategoriesListProps {
   categoryList: CategoryItem[];
@@ -65,33 +62,16 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
           </Typography>
         </Grid>
         <Grid item xs='auto'>
-          <FormControl fullWidth={true}>
-            <InputLabel
-              sx={{ backgroundColor: "black", pr: "5px" }}
-              id='demo-simple-select-label'
-            >
-              Kategori
-            </InputLabel>
-            <Select
-              value={selectedOption}
-              onChange={handleOnchange}
-              labelId='demo-simple-select-label'
-              id='demo-simple-select'
-              label='Kategori'
-            >
-              {categoryList.length > 0 &&
-                categoryList.map((item) => {
-                  return (
-                    <MenuItem key={genereteId()} value={item.id}>
-                      {item.name}
-                    </MenuItem>
-                  );
-                })}
-            </Select>
-          </FormControl>
+          <CategoriesSelect
+            selectedOption={selectedOption}
+            handleOnchange={handleOnchange}
+            genereteId={genereteId}
+            categoryList={categoryList}
+          />
         </Grid>
       </Grid>
       <ProgramsList radioList={radioList} />
     </Box>
   );
 }
+
