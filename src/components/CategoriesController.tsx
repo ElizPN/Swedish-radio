@@ -13,12 +13,7 @@ export function CategoriesController() {
   useEffect(() => {
     async function fetchData() {
       const categories = await fetchRadioCategories();
-
-      const categoriesInfo = categories.map((item: CategoryItem) => {
-        const categoryItem = { id: item.id, name: item.name };
-        return categoryItem;
-      });
-      setCategoryList(categoriesInfo);
+      setCategoryList(categories);
     }
     fetchData();
   }, []);
