@@ -1,18 +1,15 @@
-import {
-  Grid,
-  SelectChangeEvent,
-  Typography,
-} from "@mui/material";
+import { Grid, SelectChangeEvent, Typography } from "@mui/material";
 import Box from "@mui/system/Box";
-import { useState } from "react";
-import { CategoryItem } from "./CategoriesController";
+import { useEffect, useState } from "react";
 import { ProgramsList } from "./ProgramsList";
 import { fetchRadioData } from "../services/fetchRadioPrograms";
 import { genereteId } from "../services/generateId";
 import { CategoriesSelect } from "./CategoriesSelect";
+import { fetchRadioCategories } from "../services/fetchRadioCategories";
 
-interface CategoriesListProps {
-  categoryList: CategoryItem[];
+export interface CategoryItem {
+  id: number;
+  name: string;
 }
 export interface ProgramData {
   name: string;
@@ -28,9 +25,18 @@ const styleGridContainer = {
   padding: 1,
 };
 
-export function CategoriesList({ categoryList }: CategoriesListProps) {
-  const [radioList, setRadioList] = useState<ProgramData[]>([]);
+export function RadioContainer() {
+  const [categoryList, setCategoryList] = useState<CategoryItem[]>([]);
   const [selectedOption, setSelectedOption] = useState("");
+  const [radioList, setRadioList] = useState<ProgramData[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const categories = await fetchRadioCategories();
+      setCategoryList(categories);
+    }
+    fetchData();
+  }, []);
 
   const handleOnchange = async (event: SelectChangeEvent<string>) => {
     const radioData = await fetchRadioData(event.target.value);
@@ -74,4 +80,3 @@ export function CategoriesList({ categoryList }: CategoriesListProps) {
     </Box>
   );
 }
-

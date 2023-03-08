@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { ProgramData } from "./CategoriesList";
+import { ProgramData } from "./RadioContainer";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";

@@ -5,7 +5,7 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { CategoryItem } from "./CategoriesController";
+import { CategoryItem } from "./RadioContainer";
 
 interface CategoriesSelectProps {
   selectedOption: string;

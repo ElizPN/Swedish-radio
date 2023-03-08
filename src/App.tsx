@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { CategoriesController } from "./components/CategoriesController";
+import { RadioContainer } from "./components/RadioContainer";
 
 const darkTheme = createTheme({
   palette: {
@@ -14,7 +14,7 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <CategoriesController />
+      <RadioContainer />
     </ThemeProvider>
   );
 }
