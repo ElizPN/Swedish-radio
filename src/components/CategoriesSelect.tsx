@@ -20,8 +20,10 @@ export function CategoriesSelect({
   genereteId,
   categoryList,
 }: CategoriesSelectProps): JSX.Element {
+  console.log(categoryList);
+
   return (
-    <FormControl fullWidth={true}>
+    <FormControl fullWidth={true} data-testid='form-control'>
       <InputLabel
         sx={{
           backgroundColor: "black",
@@ -32,6 +34,7 @@ export function CategoriesSelect({
         Kategori
       </InputLabel>
       <Select
+        data-testid='select'
         value={selectedOption}
         onChange={handleOnchange}
         labelId='demo-simple-select-label'
@@ -41,7 +44,11 @@ export function CategoriesSelect({
         {categoryList.length > 0 &&
           categoryList.map((item) => {
             return (
-              <MenuItem key={genereteId()} value={item.id}>
+              <MenuItem
+                data-testid={item.id}
+                key={genereteId()}
+                value={item.id}
+              >
                 {item.name}
               </MenuItem>
             );
