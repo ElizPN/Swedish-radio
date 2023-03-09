@@ -17,6 +17,9 @@ export interface ProgramData {
   programimage: string;
   programurl: string;
 }
+interface RadioContainerProps {
+  fetchDefaultRadioCategories?: () => Promise<CategoryItem[]>;
+}
 
 const styleGridContainer = {
   marginTop: 5,
@@ -25,14 +28,16 @@ const styleGridContainer = {
   padding: 1,
 };
 
-export function RadioContainer() {
+export function RadioContainer({
+  fetchDefaultRadioCategories = fetchRadioCategories,
+}: RadioContainerProps) {
   const [categoryList, setCategoryList] = useState<CategoryItem[]>([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [radioList, setRadioList] = useState<ProgramData[]>([]);
 
   useEffect(() => {
     async function fetchData() {
-      const categories = await fetchRadioCategories();
+      const categories = await fetchDefaultRadioCategories();
       setCategoryList(categories);
     }
     fetchData();
