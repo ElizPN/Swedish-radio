@@ -1,4 +1,10 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { RadioContainer } from "./RadioContainer";
 
 describe("RadioContainer", () => {
@@ -9,9 +15,6 @@ describe("RadioContainer", () => {
   ];
 
   const fakeFetchRadioCategories = jest.fn().mockImplementation(() => {
-    console.log("we are here????");
-    console.log(Promise.resolve(mockCategoriesResponse));
-
     return Promise.resolve(mockCategoriesResponse);
   });
 
@@ -21,21 +24,15 @@ describe("RadioContainer", () => {
     render(
       <RadioContainer fetchDefaultRadioCategories={fakeFetchRadioCategories} />
     );
-    await waitFor(() => {
-      console.log("Component rendered");
+  
+    const trigger = screen.getByRole("button");
+    act(() => {
+      trigger.focus();
     });
-
-    // const input = screen.getByTestId("form-control") 
-    // fireEvent.click(input);
-       const select = screen.getByTestId("select");
-       fireEvent.click(select);
+    fireEvent.keyDown(trigger, { key: "ArrowDown" });
 
     // assert
     await waitFor(() => {
-      // expect(screen.getByText("News")).toBeInTheDocument();
-      // expect(screen.getByText("Music")).toBeInTheDocument();
-      // expect(screen.getByText("Sports")).toBeInTheDocument();
-
       const CategoryItem = screen.getByTestId(1);
       expect(CategoryItem).toBeInTheDocument();
     });
