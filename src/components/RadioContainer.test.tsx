@@ -33,7 +33,7 @@ describe("RadioContainer", () => {
 
     // assert
     await waitFor(() => {
-      const CategoryItem = screen.getByTestId(1);
+      const CategoryItem = screen.getByTestId("menu-item-News");
       expect(CategoryItem).toBeInTheDocument();
     });
   });
