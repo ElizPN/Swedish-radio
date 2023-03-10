@@ -45,7 +45,7 @@ export function CategoriesSelect({
           categoryList.map((item) => {
             return (
               <MenuItem
-                data-testid={item.id}
+                data-testid={`menu-item-${item.name}`}
                 key={genereteId()}
                 value={item.id}
               >
