@@ -20,7 +20,7 @@ export function CategoriesSelect({
   genereteId,
   categoryList,
 }: CategoriesSelectProps): JSX.Element {
-  console.log(categoryList);
+
 
   return (
     <FormControl fullWidth={true} data-testid='form-control'>
