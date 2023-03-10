@@ -41,7 +41,7 @@ export function RadioContainer({
       setCategoryList(categories);
     }
     fetchData();
-  }, []);
+  }, [fetchDefaultRadioCategories]);
 
   const handleOnchange = async (event: SelectChangeEvent<string>) => {
     const radioData = await fetchRadioData(event.target.value);
