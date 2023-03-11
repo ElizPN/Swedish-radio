@@ -19,6 +19,7 @@ export interface ProgramData {
 }
 interface RadioContainerProps {
   fetchDefaultRadioCategories?: () => Promise<CategoryItem[]>;
+  fetchDefaultRadioPrograms?: (id: string) => Promise<any>;
 }
 
 const styleGridContainer = {
@@ -30,6 +31,7 @@ const styleGridContainer = {
 
 export function RadioContainer({
   fetchDefaultRadioCategories = fetchRadioCategories,
+  fetchDefaultRadioPrograms = fetchRadioData,
 }: RadioContainerProps) {
   const [categoryList, setCategoryList] = useState<CategoryItem[]>([]);
   const [selectedOption, setSelectedOption] = useState("");
@@ -44,8 +46,10 @@ export function RadioContainer({
   }, [fetchDefaultRadioCategories]);
 
   const handleOnchange = async (event: SelectChangeEvent<string>) => {
-    const radioData = await fetchRadioData(event.target.value);
+    const radioData = await fetchDefaultRadioPrograms(event.target.value);
     const programs = radioData.programs;
+    console.log(radioData);
+    
 
     const programsInfo = programs.map((item: ProgramData) => {
       const progaramdata = {
