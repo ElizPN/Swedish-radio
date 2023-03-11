@@ -16,8 +16,16 @@ export function ProgramsList({ radioList }: ProgramsListProps) {
     <Box>
       <Grid container spacing={2} padding={5}>
         {radioList.length > 0 &&
-          radioList.map((item) => (
-            <Grid key={genereteId()} item xs={12} sm={6} md={4} lg={3}>
+          radioList.map((item, index) => (
+            <Grid
+              key={genereteId()}
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              data-testid={`program-item-${index}`}
+            >
               <Card sx={{ maxWidth: 345 }}>
                 <Link href={item.programurl} target='_blank'>
                   <CardActionArea>
