@@ -7,8 +7,10 @@ Deployed to GitHub Pages: https://elizpn.github.io/Swedish-radio/
 -  Language - [TypeScript](https://www.typescriptlang.org/)
 -  Client Framework - [React](https://reactjs.org)
 -  Unit testing - [Jest](https://jestjs.io), [React Testing Library](https://testing-library.com)
--  E2E testing - [Cypress](https://www.cypress.io/)
 -  Styles - [Material UI](https://mui.com/) 
+
+## Architecture: 
+<img src="./public/architecture.png" title="Architecture Diagram">
 
 # Desctop version demo: 
 <img src="./public/gifs/desc.gif" title="desc demo">
